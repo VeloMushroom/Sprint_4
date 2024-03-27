@@ -40,9 +40,6 @@ public class FAQTest {
     public void FAQTest() {
         homePage objHomePage = new homePage(driverFactory.getDriver());
 
-        WebElement element = driverFactory.getDriver().findElement(By.xpath(".//div[@id='accordion__heading-0']"));
-        ((JavascriptExecutor) driverFactory.getDriver()).executeScript("arguments[0].scrollIntoView();", element);
-
         objHomePage.clickFAQuestion(questionNumber);
         String actualAnswer = objHomePage.FAQAnswer(answerNumber);
         MatcherAssert.assertThat(actualAnswer, containsString(answerText));

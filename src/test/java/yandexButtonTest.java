@@ -13,5 +13,6 @@ public class yandexButtonTest {
         String url = objHomePage.clickYandexButton();
         System.out.println(url);
         assertEquals("https://dzen.ru/?yredirect=true", url);
+       // driverFactory.after();
     }
 }

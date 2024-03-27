@@ -1,5 +1,7 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,6 +27,7 @@ public class homePage {
     //Кнопка Заказать внизу страницы
     private By orderDownButton = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
 
+
     public void clickOrderUpButton() {
         driver.findElement(orderUpButton).click();
     }
@@ -34,7 +37,9 @@ public class homePage {
     }
 
     public void clickFAQuestion(int questionNumber) {
-        driver.findElement(By.xpath(".//div[@id='accordion__heading-" + questionNumber + "']")).click();
+        WebElement element = driver.findElement(By.xpath(".//div[@id='accordion__heading-" + questionNumber + "']"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+        element.click();
     }
 
     public String FAQAnswer(int answerNumber) {
