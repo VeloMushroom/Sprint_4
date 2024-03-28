@@ -1,5 +1,7 @@
 import org.junit.Rule;
 import org.junit.Test;
+import pages.homePage;
+
 import static org.junit.Assert.assertEquals;
 
 public class scooterButtonTest {

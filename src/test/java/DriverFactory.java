@@ -18,7 +18,7 @@ public class DriverFactory extends ExternalResource {
 
     @Override
     protected void after() {
-        driver.close();
+        driver.quit();
     }
 
     public void initDriver() {
